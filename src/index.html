@@ -1,21 +1,91 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sample Build Project</title>
+    <title>회원가입</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <main class="page">
-      <p class="eyebrow">Codex Demo</p>
-      <h1>Buildable starter project</h1>
-      <p class="copy">
-        This is a minimal static project with a local build step and no external
-        dependencies.
-      </p>
-      <button id="action" type="button">Check build output</button>
-      <p id="status" class="status">Waiting for interaction.</p>
+    <main class="shell">
+      <section class="hero">
+        <p class="eyebrow">Create account</p>
+        <h1>서비스를 시작할 새 계정을 만드세요.</h1>
+        <p class="copy">
+          몇 가지 정보만 입력하면 바로 시작할 수 있습니다. 업무용이든 개인용이든
+          동일한 계정으로 간편하게 관리할 수 있습니다.
+        </p>
+        <ul class="benefits">
+          <li>이메일 인증으로 안전하게 가입</li>
+          <li>프로필과 알림 설정 즉시 사용 가능</li>
+          <li>모바일과 데스크톱에서 동일한 환경 제공</li>
+        </ul>
+      </section>
+
+      <section class="panel">
+        <form class="signup-form" id="signup-form">
+          <div class="field">
+            <label for="name">이름</label>
+            <input id="name" name="name" type="text" placeholder="홍길동" />
+          </div>
+
+          <div class="field">
+            <label for="email">이메일</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="name@example.com"
+              required
+            />
+          </div>
+
+          <div class="field-grid">
+            <div class="field">
+              <label for="password">비밀번호</label>
+              <input
+                id="password"
+                name="password"
+                type="password"
+                placeholder="8자 이상 입력"
+                minlength="8"
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label for="confirm-password">비밀번호 확인</label>
+              <input
+                id="confirm-password"
+                name="confirmPassword"
+                type="password"
+                placeholder="비밀번호 다시 입력"
+                minlength="8"
+              />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="role">사용 목적</label>
+            <select id="role" name="role">
+              <option value="">선택해주세요</option>
+              <option value="personal">개인용</option>
+              <option value="team">팀 협업용</option>
+              <option value="business">비즈니스용</option>
+            </select>
+          </div>
+
+          <label class="checkbox">
+            <input id="terms" name="terms" type="checkbox" />
+            <span>이용약관 및 개인정보 처리방침에 동의합니다.</span>
+          </label>
+
+          <button class="submit-button" type="submit">회원가입</button>
+          <p id="status" class="status" aria-live="polite">
+            이메일과 비밀번호를 입력해주세요.
+          </p>
+        </form>
+      </section>
     </main>
     <script type="module" src="./main.js"></script>
   </body>
