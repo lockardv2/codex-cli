@@ -1,4 +1,4 @@
-//회원가입 페이지
+//회원가입페이지
 const form = document.querySelector("#signup-form");
 const status = document.querySelector("#status");
 const email = document.querySelector("#email");
